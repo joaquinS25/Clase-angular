@@ -1,0 +1,54 @@
+<p>Componente de Interpolacion</p>
+<div [ngClass]="nombre ? 'clase-ejemplo' : ''" 
+     [style.font-size]="nombre ? '20px' : '10px'">
+     {{nombre ? nombre : 'vacio'}}
+</div>
+
+<br>
+<button class="btn btn-primary me-3" (click)="nombre='Texto Ejemplo'">Asignar Texto</button>
+<button class="btn btn-warning" (click)="nombre= ''">Remover Datos</button>
+<br>
+<div appMiDirectiva>
+    Conexion
+</div>
+<br><br><br>
+<ul>
+    <li *ngFor="let nombrePersona of personas">
+        Nombre: {{nombrePersona}} 
+    </li>
+</ul>
+<br><br>
+<div class="me-3" *ngIf="bandera">
+    La bandera esta activada
+</div>
+<br>
+<button class="btn btn-success me-3" (click)="bandera=true">Encender Bandera</button>
+<button class="btn btn-danger" (click)="bandera=false">Apagar Bandera</button>
+<br><br>
+<div [ngSwitch]="valorSwitch">
+    <span *ngSwitchCase="'valor1'">Valor 1</span>
+    <p *ngSwitchCase="'valor2'">Valor 2</p>
+    <strong *ngSwitchCase="'valor3'">Valor 3</strong>
+ </div>
+<button class="btn btn-secondary me-3" (click)="valorSwitch='valor1'">1</button>
+<button class="btn btn-info me-3" (click)="valorSwitch='valor2'">2</button>
+<button class="btn btn-dark" (click)="valorSwitch='valor3'">3</button>
+<br><br><br>
+<button class="btn btn-danger" (click)="decirHola()">ALERTA</button>
+ <br><br><br>
+ <p>
+    <label for="nombre">Nombre: </label>
+    <input id="nombre" [(ngModel)]="nombre" />
+ </p>
+ <p>
+    <label for="apellido">Apellido: </label>
+    <input id="apellido" [(ngModel)]="apellido" />
+ </p>
+ <button (click)="verDatos()">Mostrar</button>
+ <button (click)="cargarDatos()">Cargar</button>
+ <br><br><br>
+ <div>
+    Hoy es: {{hoy | date : 'h:mm a'}} <br>
+    {{25.5 | currency}} <br>
+    {{'Mi texto pipe' | miPipe : 'Mayus'}}
+ </div>
