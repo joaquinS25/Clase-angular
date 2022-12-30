@@ -27,6 +27,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ObservablesComponent } from './clase10/componentes/observables/observables.component';
 import { FechaComponent } from './clase10/componentes/fecha/fecha.component';
 import { ContadorComponent } from './clase10/componentes/contador/contador.component';
+import { RouterModule, Routes } from '@angular/router';
+import { RoutingModule } from './routing.module';
+
+
 
 export const APIURL = new InjectionToken('APIURL');
 
@@ -52,7 +56,8 @@ export const APIURL = new InjectionToken('APIURL');
     ListaAlumnosComponent,
     ObservablesComponent,
     FechaComponent,
-    ContadorComponent,
+    ContadorComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,8 @@ export const APIURL = new InjectionToken('APIURL');
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,  
+    RoutingModule
   ],
   providers: [
     {provide: APIURL, useValue: 'https://rickandmortyapi.com/api'}
