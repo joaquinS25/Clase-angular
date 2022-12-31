@@ -6,7 +6,8 @@ import { EjemploContenidoDosComponent } from './clase11/mi-vista/ejemplo-conteni
 import { MiVistaComponent } from './clase11/mi-vista/mi-vista.component';
 
 const rutas: Routes = [
-  {path: 'mi-vista', component: MiVistaComponent }   
+  {path: 'mi-vista', component: MiVistaComponent },
+  {path: 'mi-vista/:parametro', component: MiVistaComponent }   
 ]
 
 

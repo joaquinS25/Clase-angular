@@ -29,6 +29,7 @@ import { FechaComponent } from './clase10/componentes/fecha/fecha.component';
 import { ContadorComponent } from './clase10/componentes/contador/contador.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RoutingModule } from './routing.module';
+import { MiVistaModule } from './clase11/mi-vista/mi-vista.module';
 
 
 
@@ -66,7 +67,8 @@ export const APIURL = new InjectionToken('APIURL');
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,  
-    RoutingModule
+    RoutingModule,
+    MiVistaModule
   ],
   providers: [
     {provide: APIURL, useValue: 'https://rickandmortyapi.com/api'}
